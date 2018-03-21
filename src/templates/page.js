@@ -21,6 +21,15 @@ PageTemplate.propTypes = {
   data: PropTypes.object.isRequired,
 };
 
+export const query = graphql`
+  query currentPageQuery($id: String!) {
+    wordpressPage(id: { eq: $id }) {
+      title
+      content
+    }
+  }
+`;
+
 /*
 export const query = graphql`
   query currentPageQuery($id: String = "0b80e4e9-712a-5853-b8bf-0c8b65c8eab4") {

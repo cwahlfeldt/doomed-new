@@ -18,7 +18,7 @@ PostTemplate.propTypes = {
 };
 
 export const query = graphql`
-  query currentProductQuery($id: String!) {
+  query currentPostQuery($id: String!) {
     wordpressPost(id: { eq: $id }) {
       title
       content

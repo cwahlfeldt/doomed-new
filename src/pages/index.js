@@ -1,11 +1,48 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import { gql } from 'apollo-boost';
+import { Query } from 'react-apollo';
 
-const IndexPage = () => (
-  <section>
-    <p>Doomed blog is being redeveloped w/ Gatsby cause react router is better than regular url handeling :)</p>
-    <p>Lorem officiis pariatur ducimus quo dicta fuga! Et quisquam in debitis fugit amet fugiat. Consequuntur atque pariatur nam non quibusdam doloremque Fugiat quo et esse inventore ducimus veniam quisquam Quod. Lorem non lorem tempora atque ab consequuntur. Reprehenderit nulla quas quam eum placeat Ipsum numquam magnam at similique corporis? Modi explicabo sint placeat obcaecati voluptatibus! Suscipit atque temporibus possimus quos.</p>
-  </section>
+const pageQuery = gql`
+  query pageQuery {
+     posts {
+      edges {
+        node {
+          id
+          title
+          uri
+          content
+        }
+      }
+    }
+  }
+`;
+
+const IndexPage = ({ data: {wordpressPost} }) => (
+  <div>
+  <Query query={pageQuery}>
+    {({ loading, error, data }) => {
+      if (loading) return <div>Loading...</div>;
+      if (error) return <div>Error :(</div>;
+
+      return (
+        <div>
+          <p>{ data.posts.edges[0].node.title }</p>
+        </div>
+      )
+    }}
+  </Query>
+    <p>{ wordpressPost.title }</p>
+  </div>
 )
 
 export default IndexPage
+
+export const query = graphql`
+  query mypagequery {
+    wordpressPost {
+      title
+      content
+    }
+  }
+`;
