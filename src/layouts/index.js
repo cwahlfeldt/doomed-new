@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import '../assets/tachyons/css/tachyons.min.css';
 
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 import './index.css';
 
 const TemplateWrapper = ({ children }) => (
@@ -17,6 +18,7 @@ const TemplateWrapper = ({ children }) => (
     <main>
       { children() }
     </main>
+    <Footer />
   </section>
 );
 
