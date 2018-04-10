@@ -7,24 +7,22 @@ const Nav = () => (
       top-nav ph4
       flex flex-row
       items-center
-      justify-between
+      justify-between pv5-ns pv3
     `}
   >
-    <div className="logo">
-      <h2 className={`fw4 f2 helvetica mv4 ttu`}>Doomed</h2>
-    </div>
+    <header className="logo w-100">
+      <h2
+        style={{fontFamily: 'UnifrakturCook, cursive'}}
+        className={`
+          title near-black fw1 f1 mv4
+          w-100 tc
+        `}
+      >
+        Doomed
+      </h2>
+    </header>
     <div className="menu">
-      <button style={{ paddingRight: 0 }} className="hamburger hamburger--elastic pr0" type="button">
-        <span className="hamburger-box">
-          <span className="hamburger-inner"></span>
-        </span>
-      </button>
     </div>
-    {/*
-    <div className="filters">
-      <input type="text" />
-    </div>
-    */}
   </nav>
 );
 

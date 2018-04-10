@@ -1,0 +1,30 @@
+:root {
+  --shadow-color: purple;
+}
+
+body, html {
+  background-color: #111;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-backface-visibility: hidden;
+}
+
+.title {
+  font-size: 15em;
+  letter-spacing: 8px;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: border-box;
+  background-clip: text;
+
+  background-color: #9dc5c3;
+  background-image: linear-gradient(315deg, #9dc5c3 0%, #5e5c5c 74%);
+}
+
+@media screen and (max-width: 822px) {
+  .title {
+    font-size: 21vw;
+  }
+}

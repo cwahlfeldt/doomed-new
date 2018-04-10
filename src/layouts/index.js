@@ -6,6 +6,7 @@ import '../assets/tachyons/css/tachyons.min.css';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import './index.css';
+import '../assets/index.css';
 
 const TemplateWrapper = ({ children }) => (
   <section className="template-wrap">
@@ -13,6 +14,7 @@ const TemplateWrapper = ({ children }) => (
       <title>Doomed</title>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <link href="https://fonts.googleapis.com/css?family=UnifrakturCook:700" rel="stylesheet" />
     </Helmet>
     <Nav />
     <main>
